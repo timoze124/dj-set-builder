@@ -231,7 +231,7 @@ async function fetchSpotifyCandidates(genre: string): Promise<SpotifyCandidate[]
     const url = new URL("https://api.spotify.com/v1/search");
     url.searchParams.set("q", query);
     url.searchParams.set("type", "track");
-    url.searchParams.set("limit", "20");
+    url.searchParams.set("limit", "10");
     url.searchParams.set("market", "CH");
 
     const response = await fetch(url.toString(), {
