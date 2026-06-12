@@ -1,3 +1,11 @@
+export type SetInput = {
+  genre: string;
+  place: string;
+  time: string;
+  minBpm: number;
+  maxBpm: number;
+};
+
 export type Track = {
   number: number;
   title: string;
@@ -16,4 +24,12 @@ export type Track = {
   popularity?: number;
   trendScore?: number;
   source?: "spotify" | "openai" | "fallback";
+};
+
+export type GeneratedSet = {
+  setTitle: string;
+  setVibe: string;
+  bpmRange: string;
+  energyCurve: string;
+  tracks: Track[];
 };
