@@ -392,17 +392,19 @@ export default function Home() {
           <div className="table-wrap">
             <table>
               <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Track</th>
-                  <th>Artist</th>
-                  <th>BPM</th>
-                  <th>Key</th>
-                  <th>Energie</th>
-                  <th>Phase</th>
-                  <th>Vibe</th>
-                  <th>Übergang</th>
-                </tr>
+        <tr>
+          <th>#</th>
+          <th>Track</th>
+          <th>Artist</th>
+          <th>BPM</th>
+          <th>Key</th>
+          <th>Energie</th>
+          <th>Phase</th>
+          <th>Release</th>
+          <th>Trend</th>
+          <th>Spotify</th>
+          <th>Übergang</th>
+        </tr>
               </thead>
               <tbody>
                 {generatedSet.tracks.map((song) => (
@@ -414,8 +416,16 @@ export default function Home() {
                     <td><span className="pill">{song.key}</span></td>
                     <td>{song.energy}/10</td>
                     <td>{song.phase}</td>
-                    <td>{song.vibe}</td>
-                    <td>{song.transition}</td>
+<td>{song.releaseDate || "-"}</td>
+<td>{song.trendScore ? `${song.trendScore}/100` : "-"}</td>
+<td>
+  {song.spotifyUrl ? (
+    <a href={song.spotifyUrl} target="_blank" rel="noreferrer">
+      Öffnen
+    </a>
+  ) : "-"}
+</td>
+<td>{song.transition}</td>
                   </tr>
                 ))}
               </tbody>
