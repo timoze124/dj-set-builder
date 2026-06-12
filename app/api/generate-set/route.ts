@@ -354,15 +354,17 @@ ${JSON.stringify(spotifyCandidates)}
 
 Aufgabe:
 - Erstelle ein DJ-Set mit exakt 50 Songs.
-- Wähle bevorzugt Songs aus der Spotify-Kandidatenliste.
-- Wenn mindestens 50 Spotify-Kandidaten vorhanden sind, erfinde keine Songs.
+- Wenn die Spotify-Kandidatenliste mindestens 50 Songs enthält, MUSST du ausschließlich Songs aus dieser Liste verwenden.
+- Erfinde keine Tracknamen, keine Artists, keine spotifyId und keine spotifyUrl.
+- Übernimm title, artist, spotifyId, spotifyUrl, releaseDate, popularity und trendScore exakt aus der Spotify-Kandidatenliste.
+- Songs ohne spotifyId oder spotifyUrl sind nur erlaubt, wenn die Spotify-Kandidatenliste leer ist.
 - Bevorzuge Songs mit hohem trendScore.
 - Bevorzuge Songs mit hoher popularity.
 - Bevorzuge neue Songs mit aktuellem releaseDate.
 - Baue eine DJ-Dramaturgie: Warm-up, Build, Groove, Peak, Reset, Closing.
 - Sortiere die Songs passend für Ort und Tagesphase.
 - Halte die BPM-Werte zwischen ${input.minBpm} und ${input.maxBpm}.
-- Wenn Spotify keine BPM liefert, schätze einen plausiblen BPM-Wert im gewünschten Bereich.
+- Gib für jeden Track spotifyId, spotifyUrl, releaseDate, popularity, trendScore und source zurück. Wenn der Track aus Spotify stammt, müssen diese Werte exakt aus der Kandidatenliste übernommen werden.
 - Wenn Spotify keine Key-Information liefert, schätze eine plausible Camelot-Key-Notation.
 - Gib für jeden Track spotifyId, spotifyUrl, releaseDate, popularity, trendScore und source zurück, falls vorhanden.
 - Antwort nur als gültiges JSON.
